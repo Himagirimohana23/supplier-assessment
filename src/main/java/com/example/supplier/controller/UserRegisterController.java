@@ -1,5 +1,6 @@
 package com.example.supplier.controller;
 
+import com.example.supplier.dto.*;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,8 +14,7 @@ public class UserRegisterController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<User> registerUser(@RequestBody User){
-
-        return new ResponseEntity<>(user, HttpStatus.CREATED);
+    public ResponseEntity<RegisterResponse> registerUser(@RequestBody RegisterRequest registerRequest) {
+        return new ResponseEntity<RegisterResponse>(HttpStatus.CREATED);
     }
 }
